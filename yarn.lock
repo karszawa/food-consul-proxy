@@ -2,12 +2,28 @@
 # yarn lockfile v1
 
 
-cors-proxy@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cors-proxy/-/cors-proxy-1.0.3.tgz#b042757e730f8ff7c7413cce5fda1bc80e4c5899"
+cors-anywhere@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/cors-anywhere/-/cors-anywhere-0.4.1.tgz#95573a53516cd90c1ebb05e2f5dc48a735d970e8"
   dependencies:
-    http-https "^1.0.0"
+    http-proxy "1.11.1"
+    proxy-from-env "0.0.1"
 
-http-https@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/http-https/-/http-https-1.0.0.tgz#2f908dd5f1db4068c058cd6e6d4ce392c913389b"
+eventemitter3@1.x.x:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-1.2.0.tgz#1c86991d816ad1e504750e73874224ecf3bec508"
+
+http-proxy@1.11.1:
+  version "1.11.1"
+  resolved "http://registry.npmjs.org/http-proxy/-/http-proxy-1.11.1.tgz#71df55757e802d58ea810df2244019dda05ae85d"
+  dependencies:
+    eventemitter3 "1.x.x"
+    requires-port "0.x.x"
+
+proxy-from-env@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-0.0.1.tgz#b27c4946e9e6d5dbadb7598a6435d3014c4cfd49"
+
+requires-port@0.x.x:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-0.0.1.tgz#4b4414411d9df7c855995dd899a8c78a2951c16d"

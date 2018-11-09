@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/karszawa/food-consul-proxy#readme",
   "dependencies": {
-    "cors-proxy": "^1.0.3"
+    "cors-anywhere": "^0.4.1"
   }
 }
