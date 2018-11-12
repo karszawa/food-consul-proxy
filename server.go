@@ -6,6 +6,7 @@ import (
 	"net/http/httputil"
 	"net/url"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -19,8 +20,23 @@ func main() {
 	server := http.Server{
 		Addr: ":" + os.Getenv("PORT"),
 		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			if r.Method == http.MethodOptions {
+				w.Header().Set("Access-Control-Allow-Origin", "*")
+				w.WriteHeader(http.StatusOK)
+
+				return
+			}
+
 			w.Header().Set("Access-Control-Allow-Origin", "*")
 			w.Header().Set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
+
+			var headerKeys []string
+
+			for k := range r.Header {
+				headerKeys = append(headerKeys, k)
+			}
+
+			w.Header().Set("Access-Control-Expose-Headers", strings.Join(headerKeys, ","))
 
 			pxy.ServeHTTP(w, r)
 		}),
