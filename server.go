@@ -24,7 +24,7 @@ func main() {
 				w.Header().Set("Access-Control-Allow-Origin", "*")
 				w.Header().Set(
 					"Access-Control-Allow-Headers",
-					strings.Join(append(r.Header["Access-Control-Request-Headers"], "date"), ","),
+					strings.Join(r.Header["Access-Control-Request-Headers"], ","),
 				)
 				w.Header().Set(
 					"Access-Control-Allow-Method",
